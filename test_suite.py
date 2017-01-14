@@ -1,5 +1,5 @@
 import numpy as np
-import gradient_descent
+from gdescent import gradient_descent
 
 n = 8
 m = 500
