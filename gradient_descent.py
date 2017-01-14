@@ -11,6 +11,4 @@ m = 20  # number of training examples
 h = lambda theta, x: np.dot(theta.T, x)
 
 # cost function
-j = lambda x, y, theta: 
-
-dataset = np.random.rand()
+j = lambda x, y, theta: ()/(2*m)
