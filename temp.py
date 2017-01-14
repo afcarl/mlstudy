@@ -5,9 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def gradient_descent(input_mat, output_vec, learning_rate=0.1, 
-                    threshold=0.0001, plot=False, limit=100000):
-   
+def gradient_descent(input_mat, output_vec, learning_rate=0.1, threshold=0.0001, plot=False, limit=100000):
     input_shape = input_mat.shape
     output_shape = output_vec.shape
     assert input_shape[1] == output_shape[0], 'invalid shape of input/output data'
@@ -34,3 +32,20 @@ def gradient_descent(input_mat, output_vec, learning_rate=0.1,
         plt.show()
 
     return theta_vec.T
+
+if __name__ == '__main__':
+    np.random.seed(1)
+
+    n = 4
+    m = 100
+
+    target = np.random.randint(1, 10, size=(n, 1)).T
+    fn = lambda x: np.dot(target, x)
+    
+    input_mat = np.random.rand(n, m)
+    output_vec = np.array([fn(vec) for vec in input_mat.T]).reshape(m)
+    
+    param = gradient_descent(input_mat, output_vec, threshold=0.01, plot=True) 
+    
+    print target
+    print param
