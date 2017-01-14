@@ -5,7 +5,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def gradient_descent(input_mat, output_vec, learning_rate=0.1, threshold=0.0001, plot=False, limit=100000):
+def gradient_descent(input_mat, output_vec, learning_rate=0.1, 
+                    threshold=0.0001, plot=False, limit=100000):
+   
     input_shape = input_mat.shape
     output_shape = output_vec.shape
     assert input_shape[1] == output_shape[0], 'invalid shape of input/output data'
